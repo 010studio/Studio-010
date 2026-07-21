@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Studio 010 — Ontwerp- &amp; Bouwstudio</title>
-<meta name="description" content="Studio 010 is een lokale ontwerp- en bouwstudio die betaalbare, strakke websites maakt voor winkels, horeca en dienstverleners." />
+<title>Studio 010 — AI Walkthrough Video's voor Vastgoed &amp; Airbnb</title>
+<meta name="description" content="Studio 010 zet foto's van je Airbnb, woning, hotel of bedrijfspand om in een vloeiende walkthrough video — met AI (Claude + Higgsfield), zonder cameraploeg of heropname." />
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff'/%3E%3Cstop offset='26%25' stop-color='%23c4cad6'/%3E%3Cstop offset='50%25' stop-color='%238b909c'/%3E%3Cstop offset='74%25' stop-color='%23eef1f6'/%3E%3Cstop offset='100%25' stop-color='%23a7adba'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='34' height='34' rx='10' fill='url(%23g)'/%3E%3Ctext x='17' y='23' font-family='Arial,sans-serif' font-size='13' font-weight='700' fill='%230a0b0d' text-anchor='middle' letter-spacing='-0.5'%3E010%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -184,6 +184,7 @@ header.scrolled{
 
 /* ============ STATS ============ */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.audience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .stat{padding:34px 26px;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface);text-align:center;position:relative;overflow:hidden}
 .stat::before{content:"";position:absolute;inset:0;background:var(--grad-soft);opacity:0;transition:opacity .4s}
 .stat:hover::before{opacity:1}
@@ -346,7 +347,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 @media (max-width:1024px){
   .bento,.reviews{grid-template-columns:repeat(2,1fr)}
   .bento .wide{grid-column:span 2}
-  .stats,.steps{grid-template-columns:repeat(2,1fr)}
+  .stats,.steps,.audience-grid{grid-template-columns:repeat(2,1fr)}
   .prices{grid-template-columns:1fr;max-width:460px;margin:0 auto}
   .price.feat{order:-1}
 }
@@ -356,7 +357,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
   .burger{display:flex}
   .nav-cta .btn:not(.burger){display:none}
   .contact-grid{grid-template-columns:1fr;gap:34px}
-  .bento,.reviews,.stats,.steps{grid-template-columns:1fr}
+  .bento,.reviews,.stats,.steps,.audience-grid{grid-template-columns:1fr}
   .bento .wide{grid-column:span 1}
   .row2{grid-template-columns:1fr}
   .hero-cta{flex-direction:column}
@@ -386,6 +387,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
     <nav aria-label="Primary">
       <ul class="nav-links">
         <li><a href="#services" data-nl="Diensten" data-en="Services">Diensten</a></li>
+        <li><a href="#audience" data-nl="Voor wie" data-en="Who it's for">Voor wie</a></li>
         <li><a href="#process" data-nl="Werkwijze" data-en="Process">Werkwijze</a></li>
         <li><a href="#pricing" data-nl="Prijzen" data-en="Pricing">Prijzen</a></li>
         <li><a href="#faq" data-nl="FAQ" data-en="FAQ">FAQ</a></li>
@@ -397,7 +399,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
         <span class="sep">/</span>
         <span data-lang="en" role="button" tabindex="0">EN</span>
       </div>
-      <a href="#contact" class="btn btn-primary" data-magnetic><span data-nl="Start je project" data-en="Start a project">Start je project</span>
+      <a href="#contact" class="btn btn-primary" data-magnetic><span data-nl="Vraag je video aan" data-en="Get your video">Vraag je video aan</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
       <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -406,11 +408,12 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 </header>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#services" data-nl="Diensten" data-en="Services">Diensten</a>
+  <a href="#audience" data-nl="Voor wie" data-en="Who it's for">Voor wie</a>
   <a href="#process" data-nl="Werkwijze" data-en="Process">Werkwijze</a>
   <a href="#pricing" data-nl="Prijzen" data-en="Pricing">Prijzen</a>
   <a href="#reviews" data-nl="Reviews" data-en="Reviews">Reviews</a>
   <a href="#faq" data-nl="FAQ" data-en="FAQ">FAQ</a>
-  <a href="#contact" class="btn btn-primary"><span data-nl="Start je project" data-en="Start a project">Start je project</span></a>
+  <a href="#contact" class="btn btn-primary"><span data-nl="Vraag je video aan" data-en="Get your video">Vraag je video aan</span></a>
 </div>
 
 <main id="top">
@@ -418,13 +421,13 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <section class="hero">
   <div class="hero-orbit"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
   <div class="wrap hero-inner">
-    <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="Ontwerp- &amp; Bouwstudio · 010" data-en="Design &amp; Build Studio · 010">Ontwerp- &amp; Bouwstudio · 010</span></div>
+    <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="AI Video Productie · 010" data-en="AI Video Production · 010">AI Video Productie · 010</span></div>
     <h1 class="reveal" data-delay="80"
-        data-nl='<span class="line"><span>Websites waar lokale</span></span><span class="line"><span>ondernemers <span class="grad-text">trots op zijn.</span></span></span>'
-        data-en='<span class="line"><span>Websites local businesses</span></span><span class="line"><span>are <span class="grad-text">proud of.</span></span></span>'>
-      <span class="line"><span>Websites waar lokale</span></span><span class="line"><span>ondernemers <span class="grad-text">trots op zijn.</span></span></span>
+        data-nl='<span class="line"><span>Van foto&rsquo;s naar een</span></span><span class="line"><span>walkthrough video <span class="grad-text">die verkoopt.</span></span></span>'
+        data-en='<span class="line"><span>From photos to a</span></span><span class="line"><span>walkthrough video <span class="grad-text">that sells.</span></span></span>'>
+      <span class="line"><span>Van foto&rsquo;s naar een</span></span><span class="line"><span>walkthrough video <span class="grad-text">die verkoopt.</span></span></span>
     </h1>
-    <p class="lead reveal" data-delay="160" data-nl="Studio 010 is een kleine, ervaren studio uit de buurt. Wij bouwen strakke, snelle websites voor winkels, horeca en dienstverleners — ontwerp én techniek onder één dak, voor een eerlijke prijs." data-en="Studio 010 is a small, senior studio from your neighbourhood. We build clean, fast websites for shops, hospitality and local services — design and code under one roof, at a fair price.">Studio 010 is een kleine, ervaren studio uit de buurt. Wij bouwen strakke, snelle websites voor winkels, horeca en dienstverleners — ontwerp én techniek onder één dak, voor een eerlijke prijs.</p>
+    <p class="lead reveal" data-delay="160" data-nl="Studio 010 zet foto's van je Airbnb, woning, hotel of bedrijfspand om in een vloeiende walkthrough video — met AI (Claude + Higgsfield), zonder cameraploeg of heropname nodig." data-en="Studio 010 turns photos of your Airbnb, home, hotel or business property into a smooth walkthrough video — powered by AI (Claude + Higgsfield), no camera crew or reshoot required.">Studio 010 zet foto's van je Airbnb, woning, hotel of bedrijfspand om in een vloeiende walkthrough video — met AI (Claude + Higgsfield), zonder cameraploeg of heropname nodig.</p>
     <div class="hero-cta reveal" data-delay="240">
       <a href="#contact" class="btn btn-primary btn-lg" data-magnetic><span data-nl="Gratis kennismaken" data-en="Free intro call">Gratis kennismaken</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
@@ -440,7 +443,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee">
-    <span>Webdesign</span><span>Huisstijl</span><span>Webshop</span><span>Lokale SEO</span><span>Onderhoud</span><span>Horeca</span><span>Retail</span><span>Webdesign</span><span>Huisstijl</span><span>Webshop</span><span>Lokale SEO</span><span>Onderhoud</span><span>Horeca</span><span>Retail</span>
+    <span>AI Video</span><span>Airbnb</span><span>Vastgoed</span><span>Hotels</span><span>Bedrijfspanden</span><span>Walkthrough</span><span>Snelle levering</span><span>AI Video</span><span>Airbnb</span><span>Vastgoed</span><span>Hotels</span><span>Bedrijfspanden</span><span>Walkthrough</span><span>Snelle levering</span>
   </div>
 </div>
 
@@ -448,10 +451,10 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <section aria-label="Cijfers" style="padding-top:90px;padding-bottom:40px">
   <div class="wrap">
     <div class="stats">
-      <div class="stat reveal"><div class="num" data-count="17">0</div><div class="lbl" data-nl="Projecten opgeleverd in de afgelopen 30 dagen" data-en="Projects delivered in the last 30 days">Projecten opgeleverd in de afgelopen 30 dagen</div></div>
+      <div class="stat reveal"><div class="num" data-count="150" data-suffix="+">0</div><div class="lbl" data-nl="Video's opgeleverd" data-en="Videos delivered">Video's opgeleverd</div></div>
       <div class="stat reveal" data-delay="80"><div class="num" data-count="98" data-suffix="%">0</div><div class="lbl" data-nl="Tevreden klanten" data-en="Happy clients">Tevreden klanten</div></div>
-      <div class="stat reveal" data-delay="160"><div class="num" data-count="7" data-suffix="+">0</div><div class="lbl" data-nl="Jaar ervaring" data-en="Years of experience">Jaar ervaring</div></div>
-      <div class="stat reveal" data-delay="240"><div class="num" data-count="24" data-suffix="+">0</div><div class="lbl" data-nl="Lokale ondernemers" data-en="Local businesses">Lokale ondernemers</div></div>
+      <div class="stat reveal" data-delay="160"><div class="num" data-count="48" data-suffix-nl="u" data-suffix-en="h">0</div><div class="lbl" data-nl="Gemiddelde levertijd" data-en="Average turnaround">Gemiddelde levertijd</div></div>
+      <div class="stat reveal" data-delay="240"><div class="num" data-count="3" data-suffix="×">0</div><div class="lbl" data-nl="Meer aanvragen dankzij video" data-en="More inquiries thanks to video">Meer aanvragen dankzij video</div></div>
     </div>
   </div>
 </section>
@@ -461,44 +464,81 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
   <div class="wrap">
     <div class="center" style="max-width:640px;margin-bottom:56px">
       <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="Wat we doen" data-en="What we do">Wat we doen</span></div>
-      <h2 class="h-sec reveal" data-delay="60" data-nl='Alles wat jouw zaak nodig heeft om <span class="grad-text">er professioneel uit te zien.</span>' data-en='Everything your business needs to <span class="grad-text">look truly professional.</span>'>Alles wat jouw zaak nodig heeft om <span class="grad-text">er professioneel uit te zien.</span></h2>
-      <p class="sub reveal center" data-delay="120" data-nl="Van eerste pixel tot livegang regelen wij het complete plaatje, zodat jij je op je zaak kunt richten." data-en="From first pixel to launch, we handle the full picture so you can focus on running your business.">Van eerste pixel tot livegang regelen wij het complete plaatje, zodat jij je op je zaak kunt richten.</p>
+      <h2 class="h-sec reveal" data-delay="60" data-nl='Alles wat je pand nodig heeft om <span class="grad-text">tot leven te komen.</span>' data-en='Everything your property needs to <span class="grad-text">come to life.</span>'>Alles wat je pand nodig heeft om <span class="grad-text">tot leven te komen.</span></h2>
+      <p class="sub reveal center" data-delay="120" data-nl="Van foto's tot kant-en-klare video — wij regelen het complete proces, zodat jij je op je gasten, kopers of huurders kunt richten." data-en="From photos to finished video — we handle the full process, so you can focus on your guests, buyers or tenants.">Van foto's tot kant-en-klare video — wij regelen het complete proces, zodat jij je op je gasten, kopers of huurders kunt richten.</p>
     </div>
     <div class="bento">
       <div class="card wide reveal" data-magnetic>
         <div class="spot"></div>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 21h8M12 18v3"/></svg></div>
-        <h3 data-nl="Website ontwerp &amp; bouw" data-en="Website design &amp; build">Website ontwerp &amp; bouw</h3>
-        <p data-nl="Websites op maat, gemaakt om klanten binnen te halen — responsief, snel en makkelijk te beheren. Geen standaardsjablonen, nooit." data-en="Bespoke websites built to win customers — responsive, fast and easy to manage. No off-the-shelf templates, ever.">Websites op maat, gemaakt om klanten binnen te halen — responsief, snel en makkelijk te beheren. Geen standaardsjablonen, nooit.</p>
-        <div class="tags"><span class="tag">Figma → Code</span><span class="tag">CMS</span><span class="tag" data-nl="Mobielvriendelijk" data-en="Mobile-friendly">Mobielvriendelijk</span><span class="tag" data-nl="Snel" data-en="Fast">Snel</span></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10 9.5 15 12l-5 2.5v-5Z"/></svg></div>
+        <h3 data-nl="AI Walkthrough Video Productie" data-en="AI Walkthrough Video Production">AI Walkthrough Video Productie</h3>
+        <p data-nl="Stuur ons je foto's — wij zetten ze om in een vloeiende, cinematic walkthrough video met AI (Claude + Higgsfield). Geen camera, geen heropname nodig." data-en="Send us your photos — we turn them into a smooth, cinematic walkthrough video with AI (Claude + Higgsfield). No camera, no reshoot required.">Stuur ons je foto's — wij zetten ze om in een vloeiende, cinematic walkthrough video met AI (Claude + Higgsfield). Geen camera, geen heropname nodig.</p>
+        <div class="tags"><span class="tag">Claude + Higgsfield</span><span class="tag" data-nl="Geen reshoot nodig" data-en="No reshoot needed">Geen reshoot nodig</span><span class="tag" data-nl="Elk pand" data-en="Any property">Elk pand</span></div>
       </div>
       <div class="card reveal" data-delay="80" data-magnetic>
         <div class="spot"></div>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18M3 12h18"/></svg></div>
-        <h3 data-nl="Huisstijl &amp; logo" data-en="Branding &amp; logo">Huisstijl &amp; logo</h3>
-        <p data-nl="Een logo en huisstijl die jouw zaak herkenbaar en betrouwbaar maken." data-en="A logo and identity that make your business recognisable and trustworthy.">Een logo en huisstijl die jouw zaak herkenbaar en betrouwbaar maken.</p>
-        <div class="tags"><span class="tag">Logo</span><span class="tag" data-nl="Huisstijl" data-en="Guidelines">Huisstijl</span></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21a9 9 0 1 1 0-18c4 0 7 2 7 5.5 0 2-1.5 3-3.5 3H14a1.5 1.5 0 0 0 0 3h.5a1.5 1.5 0 0 1 0 3H12Z"/><circle cx="8" cy="10" r="1" fill="currentColor" stroke="none"/><circle cx="9" cy="14.5" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="7.5" r="1" fill="currentColor" stroke="none"/></svg></div>
+        <h3 data-nl="Stijl &amp; sfeer" data-en="Style &amp; mood">Stijl &amp; sfeer</h3>
+        <p data-nl="Kies de stijl die past bij je pand: cinematic, warm &amp; gezellig, of strak &amp; modern." data-en="Choose the style that fits your property: cinematic, warm &amp; cosy, or sleek &amp; modern.">Kies de stijl die past bij je pand: cinematic, warm &amp; gezellig, of strak &amp; modern.</p>
+        <div class="tags"><span class="tag" data-nl="Cinematic" data-en="Cinematic">Cinematic</span><span class="tag" data-nl="Warm" data-en="Warm">Warm</span><span class="tag" data-nl="Modern" data-en="Modern">Modern</span></div>
       </div>
       <div class="card reveal" data-magnetic>
         <div class="spot"></div>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3 data-nl="Lokale vindbaarheid" data-en="Local SEO">Lokale vindbaarheid</h3>
-        <p data-nl="Beter gevonden worden in Google en Maps door klanten uit de buurt." data-en="Get found in Google and Maps by customers in your area.">Beter gevonden worden in Google en Maps door klanten uit de buurt.</p>
-        <div class="tags"><span class="tag">Google</span><span class="tag">Maps</span></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="13" height="10" rx="1.3"/><path d="M6.5 17.5h6"/><rect x="16.5" y="9" width="4.5" height="8.5" rx="1.1"/></svg></div>
+        <h3 data-nl="Multi-platform formaten" data-en="Multi-platform formats">Multi-platform formaten</h3>
+        <p data-nl="Verticaal voor Reels &amp; TikTok, horizontaal voor YouTube en je website, vierkant voor Instagram en Airbnb." data-en="Vertical for Reels &amp; TikTok, horizontal for YouTube and your website, square for Instagram and Airbnb.">Verticaal voor Reels &amp; TikTok, horizontaal voor YouTube en je website, vierkant voor Instagram en Airbnb.</p>
+        <div class="tags"><span class="tag" data-nl="Verticaal" data-en="Vertical">Verticaal</span><span class="tag" data-nl="Horizontaal" data-en="Horizontal">Horizontaal</span><span class="tag" data-nl="Vierkant" data-en="Square">Vierkant</span></div>
       </div>
       <div class="card reveal" data-delay="80" data-magnetic>
         <div class="spot"></div>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8Z"/></svg></div>
-        <h3 data-nl="Beweging &amp; interactie" data-en="Motion &amp; interaction">Beweging &amp; interactie</h3>
-        <p data-nl="Subtiele animaties en details die jouw site levendig en premium laten aanvoelen." data-en="Subtle animation and detail that make your site feel alive and premium.">Subtiele animaties en details die jouw site levendig en premium laten aanvoelen.</p>
-        <div class="tags"><span class="tag">Animatie</span><span class="tag" data-nl="Details" data-en="Detail">Details</span></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v4M9 21h6"/></svg></div>
+        <h3 data-nl="Voice-over &amp; ondertiteling" data-en="Voiceover &amp; captions">Voice-over &amp; ondertiteling</h3>
+        <p data-nl="Optioneel: een ingesproken rondleiding of pakkende tekst die de hoogtepunten van je pand benadrukt." data-en="Optional: a narrated walkthrough or on-screen text that highlights your property's best features.">Optioneel: een ingesproken rondleiding of pakkende tekst die de hoogtepunten van je pand benadrukt.</p>
+        <div class="tags"><span class="tag" data-nl="Voice-over" data-en="Voiceover">Voice-over</span><span class="tag" data-nl="Ondertiteling" data-en="Captions">Ondertiteling</span></div>
       </div>
       <div class="card wide reveal" data-magnetic>
         <div class="spot"></div>
-        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
-        <h3 data-nl="Onderhoud &amp; ondersteuning" data-en="Maintenance &amp; support">Onderhoud &amp; ondersteuning</h3>
-        <p data-nl="Livegang is het begin. Wij houden je site snel, veilig en up-to-date met betaalbare onderhoudsplannen — zodat je er nooit meer naar om hoeft te kijken." data-en="Launch is just the start. We keep your site fast, secure and up to date with affordable care plans — so you never have to worry about it.">Livegang is het begin. Wij houden je site snel, veilig en up-to-date met betaalbare onderhoudsplannen — zodat je er nooit meer naar om hoeft te kijken.</p>
-        <div class="tags"><span class="tag">Hosting</span><span class="tag" data-nl="Updates" data-en="Updates">Updates</span><span class="tag">Back-ups</span><span class="tag">Support</span></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 0 1 15-6.7L21 8M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg></div>
+        <h3 data-nl="Revisies &amp; muziek" data-en="Revisions &amp; music">Revisies &amp; muziek</h3>
+        <p data-nl="Niet helemaal goed? Revisierondes inbegrepen, plus licentievrije muziek en een gebrande intro/outro voor herkenbaarheid." data-en="Not quite right? Revision rounds included, plus royalty-free music and a branded intro/outro for recognisability.">Niet helemaal goed? Revisierondes inbegrepen, plus licentievrije muziek en een gebrande intro/outro voor herkenbaarheid.</p>
+        <div class="tags"><span class="tag" data-nl="Revisies" data-en="Revisions">Revisies</span><span class="tag" data-nl="Muziek" data-en="Music">Muziek</span><span class="tag" data-nl="Branding" data-en="Branding">Branding</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ AUDIENCE ============ -->
+<section id="audience">
+  <div class="wrap">
+    <div class="center" style="max-width:640px;margin-bottom:56px">
+      <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="Voor wie" data-en="Who it's for">Voor wie</span></div>
+      <h2 class="h-sec reveal" data-delay="60" data-nl='Perfect voor <span class="grad-text">elk type pand.</span>' data-en='Perfect for <span class="grad-text">every property type.</span>'>Perfect voor <span class="grad-text">elk type pand.</span></h2>
+      <p class="sub reveal center" data-delay="120" data-nl="Van een enkele Airbnb-kamer tot een heel kantoorpand — onze video's werken voor elk type ruimte." data-en="From a single Airbnb room to an entire office building — our videos work for every type of space.">Van een enkele Airbnb-kamer tot een heel kantoorpand — onze video's werken voor elk type ruimte.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="card reveal" data-magnetic>
+        <div class="spot"></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3 data-nl="Airbnb &amp; vakantieverhuur" data-en="Airbnb &amp; short-term rentals">Airbnb &amp; vakantieverhuur</h3>
+        <p data-nl="Meer boekingen door gasten een gevoel van de ruimte te geven nog voor ze boeken." data-en="Win more bookings by giving guests a feel for the space before they book.">Meer boekingen door gasten een gevoel van de ruimte te geven nog voor ze boeken.</p>
+      </div>
+      <div class="card reveal" data-delay="80" data-magnetic>
+        <div class="spot"></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1.3"/><path d="M9 8h1M14 8h1M9 12h1M14 12h1M9 16h1M14 16h1"/></svg></div>
+        <h3 data-nl="Makelaars &amp; vastgoed" data-en="Real estate &amp; agents">Makelaars &amp; vastgoed</h3>
+        <p data-nl="Laat een woning online al 'aanvoelen' en trek serieuze kopers aan." data-en="Let a home 'feel real' online and attract serious buyers.">Laat een woning online al 'aanvoelen' en trek serieuze kopers aan.</p>
+      </div>
+      <div class="card reveal" data-magnetic>
+        <div class="spot"></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 18v-7a2 2 0 0 1 2-2h5a2 2 0 0 1 2 2v3"/><path d="M3 14h18v4"/><path d="M3 21v-3M21 21v-3"/><circle cx="7" cy="11" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+        <h3 data-nl="Hotels &amp; horeca" data-en="Hotels &amp; hospitality">Hotels &amp; horeca</h3>
+        <p data-nl="Toon kamers, gemeenschappelijke ruimtes en sfeer in één overtuigende video." data-en="Showcase rooms, common areas and atmosphere in one compelling video.">Toon kamers, gemeenschappelijke ruimtes en sfeer in één overtuigende video.</p>
+      </div>
+      <div class="card reveal" data-delay="80" data-magnetic>
+        <div class="spot"></div>
+        <div class="svc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 12h18"/></svg></div>
+        <h3 data-nl="Bedrijfspanden &amp; kantoren" data-en="Business &amp; office spaces">Bedrijfspanden &amp; kantoren</h3>
+        <p data-nl="Verhuur of verkoop bedrijfsruimte sneller met een heldere walkthrough." data-en="Rent or sell business space faster with a clear walkthrough.">Verhuur of verkoop bedrijfsruimte sneller met een heldere walkthrough.</p>
       </div>
     </div>
   </div>
@@ -509,14 +549,14 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
   <div class="wrap">
     <div class="center" style="max-width:600px;margin-bottom:56px">
       <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="Hoe we werken" data-en="How we work">Hoe we werken</span></div>
-      <h2 class="h-sec reveal" data-delay="60" data-nl='Een rustige, duidelijke <span class="grad-text">werkwijze.</span>' data-en='A calm, clear <span class="grad-text">process.</span>'>Een rustige, duidelijke <span class="grad-text">werkwijze.</span></h2>
-      <p class="sub reveal center" data-delay="120" data-nl="Vier heldere stappen en korte lijnen. Je weet altijd precies waar je project staat — geen verrassingen." data-en="Four clear stages and short lines. You always know exactly where your project stands — no surprises.">Vier heldere stappen en korte lijnen. Je weet altijd precies waar je project staat — geen verrassingen.</p>
+      <h2 class="h-sec reveal" data-delay="60" data-nl='Een rustig, duidelijk <span class="grad-text">proces.</span>' data-en='A calm, clear <span class="grad-text">process.</span>'>Een rustig, duidelijk <span class="grad-text">proces.</span></h2>
+      <p class="sub reveal center" data-delay="120" data-nl="Vier heldere stappen. Je weet altijd precies waar je video staat — geen verrassingen." data-en="Four clear stages. You always know exactly where your video stands — no surprises.">Vier heldere stappen. Je weet altijd precies waar je video staat — geen verrassingen.</p>
     </div>
     <div class="steps">
-      <div class="step reveal"><div class="n"></div><h3 data-nl="Kennismaken" data-en="Discover">Kennismaken</h3><p data-nl="We bespreken je zaak, je doelen en je klanten om te bepalen wat succes betekent." data-en="We discuss your business, goals and customers to define what success looks like.">We bespreken je zaak, je doelen en je klanten om te bepalen wat succes betekent.</p></div>
-      <div class="step reveal" data-delay="80"><div class="n"></div><h3 data-nl="Ontwerpen" data-en="Design">Ontwerpen</h3><p data-nl="Van schets tot strak ontwerp, samen verfijnd in korte, duidelijke rondes." data-en="From sketch to polished design, refined together in short, clear rounds.">Van schets tot strak ontwerp, samen verfijnd in korte, duidelijke rondes.</p></div>
-      <div class="step reveal" data-delay="160"><div class="n"></div><h3 data-nl="Bouwen" data-en="Build">Bouwen</h3><p data-nl="Schone, snelle techniek met soepele animaties — getest op elk apparaat." data-en="Clean, fast code with smooth motion — tested on every device.">Schone, snelle techniek met soepele animaties — getest op elk apparaat.</p></div>
-      <div class="step reveal" data-delay="240"><div class="n"></div><h3 data-nl="Live &amp; groeien" data-en="Launch &amp; grow">Live &amp; groeien</h3><p data-nl="We zetten hem live, meten de resultaten en blijven optimaliseren." data-en="We launch, measure the results and keep optimising.">We zetten hem live, meten de resultaten en blijven optimaliseren.</p></div>
+      <div class="step reveal"><div class="n"></div><h3 data-nl="Upload je foto's" data-en="Upload your photos">Upload je foto's</h3><p data-nl="Deel de foto's van je pand via een simpele upload-link of e-mail." data-en="Share your property photos via a simple upload link or email.">Deel de foto's van je pand via een simpele upload-link of e-mail.</p></div>
+      <div class="step reveal" data-delay="80"><div class="n"></div><h3 data-nl="Wij kiezen de stijl" data-en="We choose the style">Wij kiezen de stijl</h3><p data-nl="Ons team bepaalt de ideale flow, het tempo en de sfeer voor jouw type pand." data-en="Our team determines the ideal flow, pacing and mood for your type of property.">Ons team bepaalt de ideale flow, het tempo en de sfeer voor jouw type pand.</p></div>
+      <div class="step reveal" data-delay="160"><div class="n"></div><h3 data-nl="AI genereert de video" data-en="AI generates the video">AI genereert de video</h3><p data-nl="Claude structureert het verhaal, Higgsfield AI brengt de foto's tot leven met vloeiende beweging." data-en="Claude structures the story, Higgsfield AI brings the photos to life with smooth motion.">Claude structureert het verhaal, Higgsfield AI brengt de foto's tot leven met vloeiende beweging.</p></div>
+      <div class="step reveal" data-delay="240"><div class="n"></div><h3 data-nl="Jij ontvangt &amp; deelt" data-en="You receive &amp; share">Jij ontvangt &amp; deelt</h3><p data-nl="Binnen enkele dagen ontvang je de video, klaar voor Airbnb, Funda, social media en meer." data-en="Within a few days you receive the video, ready for Airbnb, real estate sites, social media and more.">Binnen enkele dagen ontvang je de video, klaar voor Airbnb, Funda, social media en meer.</p></div>
     </div>
   </div>
 </section>
@@ -604,18 +644,18 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
     <div class="reviews">
       <div class="review reveal" data-magnetic>
         <div class="stars" aria-label="5/5">★★★★★</div>
-        <p data-nl="&ldquo;Studio 010 heeft onze hele website vernieuwd en dat merken we. Meer online bestellingen en klanten vinden ons eindelijk makkelijk in Google.&rdquo;" data-en="&ldquo;Studio 010 rebuilt our whole website and it shows. More online orders, and customers finally find us easily on Google.&rdquo;">&ldquo;Studio 010 heeft onze hele website vernieuwd en dat merken we. Meer online bestellingen en klanten vinden ons eindelijk makkelijk in Google.&rdquo;</p>
-        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#e6e9ef,#9aa0ac)">SD</div><div><div class="nm">Sanne de Vries</div><div class="rl" data-nl="Eigenaar, Bakkerij De Korenbloem" data-en="Owner, De Korenbloem Bakery">Eigenaar, Bakkerij De Korenbloem</div></div></div>
+        <p data-nl="&ldquo;Sinds we een walkthrough video op onze Airbnb-advertentie hebben staan, krijgen we merkbaar meer boekingsaanvragen. Gasten weten precies wat ze kunnen verwachten.&rdquo;" data-en="&ldquo;Since we added a walkthrough video to our Airbnb listing, we get noticeably more booking requests. Guests know exactly what to expect.&rdquo;">&ldquo;Sinds we een walkthrough video op onze Airbnb-advertentie hebben staan, krijgen we merkbaar meer boekingsaanvragen. Gasten weten precies wat ze kunnen verwachten.&rdquo;</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#e6e9ef,#9aa0ac)">RB</div><div><div class="nm">Roos Bakker</div><div class="rl" data-nl="Airbnb-verhuurder, Amsterdam" data-en="Airbnb host, Amsterdam">Airbnb-verhuurder, Amsterdam</div></div></div>
       </div>
       <div class="review reveal" data-delay="80" data-magnetic>
         <div class="stars" aria-label="5/5">★★★★★</div>
-        <p data-nl="&ldquo;Prettig persoonlijk contact, duidelijke prijs en een site die er net zo goed uitziet als een grote keten. Echt een aanrader.&rdquo;" data-en="&ldquo;Genuinely personal, a clear price, and a site that looks as good as a big chain's. Highly recommend.&rdquo;">&ldquo;Prettig persoonlijk contact, duidelijke prijs en een site die er net zo goed uitziet als een grote keten. Echt een aanrader.&rdquo;</p>
-        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#c7ccd6,#7f858f)">MB</div><div><div class="nm">Marco Bakker</div><div class="rl" data-nl="Eigenaar, Café 't Hoekje" data-en="Owner, Café 't Hoekje">Eigenaar, Café 't Hoekje</div></div></div>
+        <p data-nl="&ldquo;Kopers bellen nu al enthousiast vóórdat ze langskomen. De video geeft een gevoel dat foto's alleen niet geven.&rdquo;" data-en="&ldquo;Buyers now call enthusiastically before they've even visited. The video gives a feeling that photos alone just can't.&rdquo;">&ldquo;Kopers bellen nu al enthousiast vóórdat ze langskomen. De video geeft een gevoel dat foto's alleen niet geven.&rdquo;</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#c7ccd6,#7f858f)">TD</div><div><div class="nm">Tom van Dijk</div><div class="rl" data-nl="Makelaar, Van Dijk Makelaardij" data-en="Estate agent, Van Dijk Makelaardij">Makelaar, Van Dijk Makelaardij</div></div></div>
       </div>
       <div class="review reveal" data-magnetic>
         <div class="stars" aria-label="5/5">★★★★★</div>
-        <p data-nl="&ldquo;Snel, meedenkend en oog voor detail. Ze gaven echt om onze klanten en het resultaat. Sindsdien komen er online afspraken binnen.&rdquo;" data-en="&ldquo;Fast, thoughtful and detail-obsessed. They really cared about our customers and the result. We now get bookings online.&rdquo;">&ldquo;Snel, meedenkend en oog voor detail. Ze gaven echt om onze klanten en het resultaat. Sindsdien komen er online afspraken binnen.&rdquo;</p>
-        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#f1f3f6,#aab0bd)">EJ</div><div><div class="nm">Esra Yıldız</div><div class="rl" data-nl="Eigenaar, Kapsalon Belle" data-en="Owner, Salon Belle">Eigenaar, Kapsalon Belle</div></div></div>
+        <p data-nl="&ldquo;We hadden geen budget voor een filmploeg, maar de video oogt alsof we die wél hadden. Precies wat we nodig hadden.&rdquo;" data-en="&ldquo;We didn't have the budget for a film crew, but the video looks like we did. Exactly what we needed.&rdquo;">&ldquo;We hadden geen budget voor een filmploeg, maar de video oogt alsof we die wél hadden. Precies wat we nodig hadden.&rdquo;</p>
+        <div class="who"><div class="avatar" style="background:linear-gradient(135deg,#f1f3f6,#aab0bd)">NE</div><div><div class="nm">Nadia El Amrani</div><div class="rl" data-nl="Manager, Hotel De Watertoren" data-en="Manager, Hotel De Watertoren">Manager, Hotel De Watertoren</div></div></div>
       </div>
     </div>
   </div>
@@ -629,11 +669,11 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
       <h2 class="h-sec reveal" data-delay="60" data-nl='Vragen, <span class="grad-text">beantwoord.</span>' data-en='Questions, <span class="grad-text">answered.</span>'>Vragen, <span class="grad-text">beantwoord.</span></h2>
     </div>
     <div class="faq">
-      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Hoelang duurt een project?" data-en="How long does a project take?">Hoelang duurt een project?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Eenvoudige projecten leveren we meestal binnen een week op. Projecten op maat met extra aanpassingen kunnen 2 tot 3 weken duren. Na een gratis kennismaking geven we een concrete planning." data-en="Simple projects can usually be delivered within a week. Custom projects with extra adjustments may take up to 2–3 weeks. After a free intro call we give you a precise timeline.">Eenvoudige projecten leveren we meestal binnen een week op. Projecten op maat met extra aanpassingen kunnen 2 tot 3 weken duren. Na een gratis kennismaking geven we een concrete planning.</p></div></div>
-      <div class="q reveal" data-delay="60"><button class="q-head" aria-expanded="false"><span data-nl="Ik heb nog geen teksten of foto's. Kan dat?" data-en="I don't have text or photos yet. Is that ok?">Ik heb nog geen teksten of foto's. Kan dat?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Geen probleem. We helpen je met de structuur, geven tips voor teksten en kunnen sfeervolle foto's regelen. Je hoeft niet alles kant-en-klaar aan te leveren." data-en="No problem. We help with structure, give guidance on copy, and can arrange nice photography. You don't need everything ready up front.">Geen probleem. We helpen je met de structuur, geven tips voor teksten en kunnen sfeervolle foto's regelen. Je hoeft niet alles kant-en-klaar aan te leveren.</p></div></div>
-      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Kan ik de site later zelf aanpassen?" data-en="Can I edit the site myself later?">Kan ik de site later zelf aanpassen?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Niet letterlijk zelf, nee — maar bij het Compleet-pakket hoeft dat ook niet: gedurende je abonnement kun je gewoon aanpassingen of updates bij ons aanvragen, zonder gedoe met een beheersysteem." data-en="Not literally yourself, no — but with the Compleet package you don't have to: throughout your subscription you can simply request adjustments or updates from us, no editing system required.">Niet letterlijk zelf, nee — maar bij het Compleet-pakket hoeft dat ook niet: gedurende je abonnement kun je gewoon aanpassingen of updates bij ons aanvragen, zonder gedoe met een beheersysteem.</p></div></div>
-      <div class="q reveal" data-delay="60"><button class="q-head" aria-expanded="false"><span data-nl="Zit hosting en onderhoud erbij?" data-en="Is hosting and maintenance included?">Zit hosting en onderhoud erbij?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Bij een maandabonnement zit alles inbegrepen: hosting, updates, back-ups en kleine wijzigingen. Bij een eenmalig project kun je een los, betaalbaar onderhoudsplan afnemen." data-en="With a monthly subscription everything is included: hosting, updates, backups and small changes. For a one-time project you can add an affordable separate care plan.">Bij een maandabonnement zit alles inbegrepen: hosting, updates, back-ups en kleine wijzigingen. Bij een eenmalig project kun je een los, betaalbaar onderhoudsplan afnemen.</p></div></div>
-      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Kan ik gespreid betalen?" data-en="Can I pay in instalments?">Kan ik gespreid betalen?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Zeker. Kies het maandabonnement om de kosten te spreiden, of betaal een eenmalig project in twee termijnen: 50% bij de start en 50% bij oplevering." data-en="Absolutely. Choose the monthly subscription to spread the cost, or pay a one-time project in two parts: 50% to start and 50% on completion.">Zeker. Kies het maandabonnement om de kosten te spreiden, of betaal een eenmalig project in twee termijnen: 50% bij de start en 50% bij oplevering.</p></div></div>
+      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Hoelang duurt het voordat ik mijn video ontvang?" data-en="How long until I receive my video?">Hoelang duurt het voordat ik mijn video ontvang?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Eenvoudige video's leveren we meestal binnen 48 uur op. Panden met extra styling of meerdere ruimtes kunnen 3 tot 5 dagen duren." data-en="Simple videos are usually delivered within 48 hours. Properties with extra styling or multiple rooms can take 3 to 5 days.">Eenvoudige video's leveren we meestal binnen 48 uur op. Panden met extra styling of meerdere ruimtes kunnen 3 tot 5 dagen duren.</p></div></div>
+      <div class="q reveal" data-delay="60"><button class="q-head" aria-expanded="false"><span data-nl="Wat voor foto's heb ik nodig?" data-en="What kind of photos do I need?">Wat voor foto's heb ik nodig?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Smartphone-foto's zijn prima, zolang ze goed belicht zijn en de ruimte breed vastleggen. Twijfel je? Ons team geeft je vooraf graag tips." data-en="Smartphone photos are perfectly fine, as long as they're well-lit and capture the room wide. Not sure? Our team is happy to give you tips beforehand.">Smartphone-foto's zijn prima, zolang ze goed belicht zijn en de ruimte breed vastleggen. Twijfel je? Ons team geeft je vooraf graag tips.</p></div></div>
+      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Kan ik de stijl of het tempo van de video aanpassen?" data-en="Can I customize the video's style or pacing?">Kan ik de stijl of het tempo van de video aanpassen?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Ja, kies uit cinematic, warm &amp; gezellig of strak &amp; modern. Ons team helpt je de juiste stijl te kiezen voor jouw pand." data-en="Yes, choose from cinematic, warm &amp; cosy or sleek &amp; modern. Our team helps you pick the right style for your property.">Ja, kies uit cinematic, warm &amp; gezellig of strak &amp; modern. Ons team helpt je de juiste stijl te kiezen voor jouw pand.</p></div></div>
+      <div class="q reveal" data-delay="60"><button class="q-head" aria-expanded="false"><span data-nl="Op welke platforms kan ik de video gebruiken?" data-en="Which platforms can I use the video on?">Op welke platforms kan ik de video gebruiken?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Overal: Airbnb, Funda en andere vastgoedsites, Instagram/TikTok/Reels, je eigen website en YouTube. We leveren in meerdere formaten aan." data-en="Anywhere: Airbnb, real estate sites, Instagram/TikTok/Reels, your own website and YouTube. We deliver in multiple formats.">Overal: Airbnb, Funda en andere vastgoedsites, Instagram/TikTok/Reels, je eigen website en YouTube. We leveren in meerdere formaten aan.</p></div></div>
+      <div class="q reveal"><button class="q-head" aria-expanded="false"><span data-nl="Kan ik wijzigingen aanvragen na oplevering?" data-en="Can I request changes after delivery?">Kan ik wijzigingen aanvragen na oplevering?</span><span class="ico" aria-hidden="true"></span></button><div class="q-body"><p data-nl="Zeker, revisierondes zijn inbegrepen zodat de video precies klopt voor jouw pand." data-en="Absolutely, revision rounds are included so the video is exactly right for your property.">Zeker, revisierondes zijn inbegrepen zodat de video precies klopt voor jouw pand.</p></div></div>
     </div>
   </div>
 </section>
@@ -644,7 +684,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
     <div class="contact-grid">
       <div class="left">
         <div class="eyebrow reveal"><span class="dot"></span> <span data-nl="Aan de slag" data-en="Let's build">Aan de slag</span></div>
-        <h2 class="reveal" data-delay="60" data-nl='Vertel ons over <span class="grad-text">je project.</span>' data-en='Tell us about <span class="grad-text">your project.</span>'>Vertel ons over <span class="grad-text">je project.</span></h2>
+        <h2 class="reveal" data-delay="60" data-nl='Vertel ons over <span class="grad-text">je pand.</span>' data-en='Tell us about <span class="grad-text">your property.</span>'>Vertel ons over <span class="grad-text">je pand.</span></h2>
         <p class="sub reveal" data-delay="120" style="margin-top:16px" data-nl="Plan een gratis kennismaking van 30 minuten. We reageren binnen één werkdag — meestal sneller." data-en="Book a free 30-minute intro call. We reply within one business day — usually sooner.">Plan een gratis kennismaking van 30 minuten. We reageren binnen één werkdag — meestal sneller.</p>
         <ul class="contact-list reveal" data-delay="160">
           <li><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><div><small>E-mail</small>hello@studio010.nl</div></li>
@@ -657,10 +697,10 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
           <div class="field"><label for="name"><span data-nl="Naam" data-en="Name">Naam</span> <span class="req">*</span></label><input id="name" name="name" type="text" autocomplete="name" data-nl-ph="Jan Jansen" data-en-ph="Jane Doe" placeholder="Jan Jansen" /><span class="err" data-nl="Vul je naam in." data-en="Please enter your name.">Vul je naam in.</span></div>
           <div class="field"><label for="email">E-mail <span class="req">*</span></label><input id="email" name="email" type="email" autocomplete="email" data-nl-ph="jan@bedrijf.nl" data-en-ph="jane@company.com" placeholder="jan@bedrijf.nl" /><span class="err" data-nl="Vul een geldig e-mailadres in." data-en="Enter a valid email address.">Vul een geldig e-mailadres in.</span></div>
         </div>
-        <div class="field"><label for="company" data-nl="Bedrijf / winkel" data-en="Business / shop">Bedrijf / winkel</label><input id="company" name="company" type="text" autocomplete="organization" data-nl-ph="Jouw zaak" data-en-ph="Your shop" placeholder="Jouw zaak" /></div>
-        <div class="field"><label for="message"><span data-nl="Vertel over je project" data-en="Project details">Vertel over je project</span> <span class="req">*</span></label><textarea id="message" name="message" data-nl-ph="Vertel kort over je zaak, wat je zoekt en wanneer…" data-en-ph="Tell us about your business, what you need, and timing…" placeholder="Vertel kort over je zaak, wat je zoekt en wanneer…"></textarea><span class="err" data-nl="Schrijf kort iets over je project." data-en="A few words about your project, please.">Schrijf kort iets over je project.</span></div>
+        <div class="field"><label for="company" data-nl="Pand / listing" data-en="Property / listing">Pand / listing</label><input id="company" name="company" type="text" autocomplete="organization" data-nl-ph="bijv. Airbnb in Amsterdam" data-en-ph="e.g. Airbnb in Amsterdam" placeholder="bijv. Airbnb in Amsterdam" /></div>
+        <div class="field"><label for="message"><span data-nl="Vertel over je pand" data-en="Property details">Vertel over je pand</span> <span class="req">*</span></label><textarea id="message" name="message" data-nl-ph="Vertel kort over je pand, hoeveel foto's je hebt en wanneer je de video nodig hebt…" data-en-ph="Tell us about your property, how many photos you have, and when you need the video…" placeholder="Vertel kort over je pand, hoeveel foto's je hebt en wanneer je de video nodig hebt…"></textarea><span class="err" data-nl="Schrijf kort iets over je pand." data-en="A few words about your property, please.">Schrijf kort iets over je pand.</span></div>
         <input type="text" name="_gotcha" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <input type="hidden" name="_subject" value="Nieuwe aanvraag via Studio 010 website" />
+        <input type="hidden" name="_subject" value="Nieuwe video-aanvraag via Studio 010 website" />
         <button type="submit" class="btn btn-primary btn-lg" data-magnetic style="width:100%"><span data-nl="Verstuur bericht" data-en="Send message">Verstuur bericht</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7Z"/></svg>
         </button>
@@ -676,8 +716,8 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <section style="padding-top:20px">
   <div class="wrap">
     <div class="finalcta reveal">
-      <h2 data-nl='Klaar voor een website <span class="grad-text">waar je trots op bent?</span>' data-en='Ready for a website <span class="grad-text">you&rsquo;re proud of?</span>'>Klaar voor een website <span class="grad-text">waar je trots op bent?</span></h2>
-      <p class="sub center" style="margin-bottom:34px" data-nl="Laten we van jouw website je beste verkoper maken. Beperkt aantal plekken per maand." data-en="Let's turn your website into your best salesperson. Limited slots each month.">Laten we van jouw website je beste verkoper maken. Beperkt aantal plekken per maand.</p>
+      <h2 data-nl='Klaar om je pand <span class="grad-text">tot leven te brengen?</span>' data-en='Ready to bring your property <span class="grad-text">to life?</span>'>Klaar om je pand <span class="grad-text">tot leven te brengen?</span></h2>
+      <p class="sub center" style="margin-bottom:34px" data-nl="Laat een walkthrough video het harde werk doen — meer aanvragen, meer boekingen, minder foto-moeheid." data-en="Let a walkthrough video do the heavy lifting — more inquiries, more bookings, less photo fatigue.">Laat een walkthrough video het harde werk doen — meer aanvragen, meer boekingen, minder foto-moeheid.</p>
       <a href="#contact" class="btn btn-primary btn-lg" data-magnetic><span data-nl="Gratis kennismaken" data-en="Free intro call">Gratis kennismaken</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
       </a>
@@ -692,10 +732,10 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
     <div class="foot-top">
       <div class="foot-brand">
         <a href="#top" class="logo"><span class="mark"><span>010</span></span> Studio&nbsp;010</a>
-        <p data-nl="Een lokale ontwerp- &amp; bouwstudio die betaalbare, strakke websites maakt voor winkels, horeca en dienstverleners uit de buurt." data-en="A local design &amp; build studio making affordable, sharp websites for neighbourhood shops, hospitality and services.">Een lokale ontwerp- &amp; bouwstudio die betaalbare, strakke websites maakt voor winkels, horeca en dienstverleners uit de buurt.</p>
+        <p data-nl="Een lokale studio die foto's van Airbnb's, woningen, hotels en bedrijfspanden omzet in cinematic walkthrough video's met AI." data-en="A local studio turning photos of Airbnb's, homes, hotels and business properties into cinematic walkthrough videos with AI.">Een lokale studio die foto's van Airbnb's, woningen, hotels en bedrijfspanden omzet in cinematic walkthrough video's met AI.</p>
       </div>
       <div class="foot-cols">
-        <div class="fcol"><h4>Studio</h4><a href="#services" data-nl="Diensten" data-en="Services">Diensten</a><a href="#process" data-nl="Werkwijze" data-en="Process">Werkwijze</a><a href="#pricing" data-nl="Prijzen" data-en="Pricing">Prijzen</a></div>
+        <div class="fcol"><h4>Studio</h4><a href="#services" data-nl="Diensten" data-en="Services">Diensten</a><a href="#audience" data-nl="Voor wie" data-en="Who it's for">Voor wie</a><a href="#process" data-nl="Werkwijze" data-en="Process">Werkwijze</a><a href="#pricing" data-nl="Prijzen" data-en="Pricing">Prijzen</a></div>
         <div class="fcol"><h4 data-nl="Bedrijf" data-en="Company">Bedrijf</h4><a href="#reviews" data-nl="Reviews" data-en="Reviews">Reviews</a><a href="#faq" data-nl="Veelgestelde vragen" data-en="FAQ">Veelgestelde vragen</a><a href="#contact" data-nl="Contact" data-en="Contact">Contact</a></div>
       </div>
     </div>
@@ -717,7 +757,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 
   /* ---------- i18n ---------- */
   var LANG_KEY = "cmd_lang";
-  var titles = {nl:"Studio 010 — Ontwerp- & Bouwstudio", en:"Studio 010 — Design & Build Studio"};
+  var titles = {nl:"Studio 010 — AI Walkthrough Video's", en:"Studio 010 — AI Walkthrough Videos"};
   var currentLang = "nl", currentBill = "monthly";
   var saved; try{ saved = localStorage.getItem(LANG_KEY); }catch(e){}
   if(saved === "en" || saved === "nl") currentLang = saved;
@@ -800,6 +840,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
     document.title = titles[lang] || document.title;
     document.querySelectorAll("#lang [data-lang]").forEach(function(s){ s.classList.toggle("on", s.getAttribute("data-lang") === lang); });
     applyBill();
+    refreshCountedSuffixes();
     /* re-measure any open FAQ after text length changes */
     document.querySelectorAll(".q.open .q-body").forEach(function(b){ b.style.maxHeight = b.scrollHeight + "px"; });
   }
@@ -848,10 +889,13 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 
   /* animated counters */
   var counted = new WeakSet();
+  function getStatSuffix(el){
+    return el.getAttribute("data-suffix-" + currentLang) || el.getAttribute("data-suffix") || "";
+  }
   function animateCount(el){
     if(counted.has(el)) return; counted.add(el);
     var target = parseFloat(el.getAttribute("data-count"));
-    var suffix = el.getAttribute("data-suffix") || "";
+    var suffix = getStatSuffix(el);
     if(reduce){ el.textContent = target + suffix; return; }
     var start = performance.now(), dur = 1600;
     function tick(now){
@@ -861,6 +905,14 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
       if(p < 1) requestAnimationFrame(tick);
     }
     requestAnimationFrame(tick);
+  }
+  function refreshCountedSuffixes(){
+    document.querySelectorAll("[data-count]").forEach(function(el){
+      if(counted.has(el)){
+        var target = parseFloat(el.getAttribute("data-count"));
+        el.textContent = Math.round(target) + getStatSuffix(el);
+      }
+    });
   }
   var cio = new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); } });
