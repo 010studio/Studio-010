@@ -121,6 +121,7 @@ header.scrolled{
 }
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px}
 .logo{display:flex;align-items:center;gap:11px;font-family:var(--font-d);font-weight:700;font-size:19px;letter-spacing:-.01em}
+.logo img{height:40px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:34px;list-style:none}
 .nav-links a{font-size:14.5px;color:var(--muted);position:relative;transition:color .25s;font-weight:400}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--grad);transition:width .3s var(--ease)}
@@ -353,7 +354,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <header id="header">
   <div class="wrap nav">
     <a href="#top" class="logo" id="logoHome" aria-label="Studio 010 home">
-      Studio&nbsp;010
+      <img src="images/logo.png" alt="Studio 010" />
     </a>
     <nav aria-label="Primary">
       <ul class="nav-links">
