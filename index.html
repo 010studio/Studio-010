@@ -352,7 +352,7 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
 <!-- ============ NAV ============ -->
 <header id="header">
   <div class="wrap nav">
-    <a href="#top" class="logo" aria-label="Studio 010 home">
+    <a href="#top" class="logo" id="logoHome" aria-label="Studio 010 home">
       Studio&nbsp;010
     </a>
     <nav aria-label="Primary">
@@ -659,6 +659,20 @@ footer{border-top:1px solid var(--border);padding:60px 0 34px}
   if(heroVideoEl && heroVideoPlaceholder){
     heroVideoEl.addEventListener("loadeddata", function(){ heroVideoPlaceholder.classList.remove("show"); });
     heroVideoEl.addEventListener("error", function(){ heroVideoPlaceholder.classList.add("show"); }, true);
+    heroVideoEl.style.cursor = "pointer";
+    heroVideoEl.addEventListener("click", function(){
+      heroVideoEl.currentTime = 0;
+      heroVideoEl.play();
+    });
+  }
+
+  /* logo: force a full page reload instead of just scrolling to top */
+  var logoHome = document.getElementById("logoHome");
+  if(logoHome){
+    logoHome.addEventListener("click", function(e){
+      e.preventDefault();
+      location.reload();
+    });
   }
 
   /* showcase example videos: same placeholder-until-loaded pattern, per card */
